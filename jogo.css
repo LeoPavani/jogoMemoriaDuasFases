@@ -1,0 +1,46 @@
+html{
+  background-color:  rgb(209, 209, 209);
+}
+
+.jogo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 22px 0;
+  background-color:  rgb(209, 209, 209);
+}
+
+.carta{
+  display: flex;
+  width: 15%;
+  height: 30vh;
+  border: 3px solid black;
+  border-radius: 15%;
+  margin: 4px 0;
+  /* transition: 0.5s all; */
+}
+
+.carta:hover{
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.carta:active{
+  transform: scale(0.9);
+}
+
+#tela {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(1, 1, 1, 0);
+  z-index: -9999;
+}
+
+#tela.naoClicavel{
+  z-index: 99999;
+}

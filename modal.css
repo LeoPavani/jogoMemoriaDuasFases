@@ -1,0 +1,25 @@
+#modal{
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  transform: scale(2);
+  margin-top: 300px;
+}
+
+#caixaDaMensagem{
+  top: 300px;
+}
+
+h2.modal-title.alinhaNoCentro{
+  margin: auto;
+}
+
+.modal-footer.containerBotoes{
+  display: flex;
+  justify-content: space-around;
+}
+
+.escondeModal{
+  z-index: -10000 !important;
+}
