@@ -3,12 +3,12 @@
   display: block;
   text-align: center;
   font-size: 1.2rem;
-  transform: scale(2);
-  margin-top: 300px;
+  /* transform: scale(2);
+  margin-top: 300px; */
 }
 
 #caixaDaMensagem{
-  top: 300px;
+  top: 130px;
 }
 
 h2.modal-title.alinhaNoCentro{
