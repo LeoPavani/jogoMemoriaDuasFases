@@ -51,7 +51,7 @@ function embaralhaCartas(){
   body.innerHTML = 
     `
       <div class="jogo">
-        ${teste}
+        ${realOficial}
       </div>
     `
   ;

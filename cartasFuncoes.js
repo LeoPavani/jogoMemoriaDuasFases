@@ -1,21 +1,21 @@
 const carta1 = `<div class="carta primeiroPar verso" id="um"></div>`;
-const carta2 = `<div class="carta primeiroPar verso" id="dois">Play</div>`;
+const carta2 = `<div class="carta primeiroPar verso" id="dois"></div>`;
 const carta3 = `<div class="carta segundoPar verso" id="tres"></div>`;
-const carta4 = `<div class="carta segundoPar verso" id="quatro">Motor Horário</div>`;
+const carta4 = `<div class="carta segundoPar verso" id="quatro"></div>`;
 const carta5 = `<div class="carta terceiroPar verso" id="cinco"></div>`;
-const carta6 = `<div class="carta terceiroPar verso" id="seis">Motor AntiHorário</div>`;
+const carta6 = `<div class="carta terceiroPar verso" id="seis"></div>`;
 const carta7 = `<div class="carta quartoPar verso" id="sete"></div>`;
-const carta8 = `<div class="carta quartoPar verso" id="oito">Stop</div>`;
+const carta8 = `<div class="carta quartoPar verso" id="oito"></div>`;
 const carta9 = `<div class="carta quintoPar verso" id="nove"></div>`;
-const carta10 = `<div class="carta quintoPar verso" id="dez">Potência</div>`;
+const carta10 = `<div class="carta quintoPar verso" id="dez"></div>`;
 const carta11 = `<div class="carta sextoPar verso" id="onze"></div>`;
-const carta12 = `<div class="carta sextoPar verso" id="doze">Esperar</div>`;
+const carta12 = `<div class="carta sextoPar verso" id="doze"></div>`;
 const carta13 = `<div class="carta setimoPar verso" id="treze"></div>`;
-const carta14 = `<div class="carta setimoPar verso" id="catorze">Desligar Motor</div>`;
+const carta14 = `<div class="carta setimoPar verso" id="catorze"></div>`;
 const carta15 = `<div class="carta oitavoPar verso" id="quinze"></div>`;
-const carta16 = `<div class="carta oitavoPar verso" id="dezesseis">Loop</div>`;
+const carta16 = `<div class="carta oitavoPar verso" id="dezesseis"></div>`;
 const carta17 = `<div class="carta nonoPar verso" id="dezessete"></div>`;
-const carta18 = `<div class="carta nonoPar verso" id="dezoito">Sensor Inclinação</div>`;
+const carta18 = `<div class="carta nonoPar verso" id="dezoito"></div>`;
 
 const arrayDeCartas = [carta1, carta2, carta3, carta4, carta5, carta6, carta7, carta8, carta9, carta10, carta11, carta12, carta13, carta14, carta15, carta16, carta17, carta18 ];
 const arrayTeste = [carta1, carta2];
@@ -51,7 +51,7 @@ function embaralhaCartas(){
   body.innerHTML = 
     `
       <div class="jogo">
-        ${teste}
+        ${realOficial}
       </div>
     `
   ;
