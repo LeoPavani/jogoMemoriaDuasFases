@@ -24,8 +24,9 @@ elemento.addEventListener("click", function(event){
   const virado = clicado.className;
   
   verificaSePodeMostrarCarta(virado, clicado)
-    
-  primeiroId = clicado.id;
+  
+  defineOPrimeiroId(clicado.id);
+  
 });
 
 
@@ -41,6 +42,10 @@ function animaACartaVirando(carta){
       }, tempoParaVirarACarta);
   }, (tempoParaVirarACarta - 30));
 }
+
+function bloqueiaCliques(){
+  telaNaoClicavel.classList.add("naoClicavel");
+} 
 
 function colocaModalVitoria(elemParaModal){
   elemParaModal.classList.remove("escondeModal");
@@ -59,6 +64,12 @@ function defineNumeroDePares(){
   return numeroDosPares;
 }
 
+function defineOPrimeiroId(id){
+  if (verificaSeNaoEhVazio(id)){
+    primeiroId = id;
+  }
+}
+
 function desviraCarta(){
   const primeiro = document.getElementById(primeiroId);
   const segundo = document.getElementById(segundoId);
@@ -71,101 +82,12 @@ function desviraCarta(){
 
 }
 
-function fazValidacoes(cartasClicadasPorRodada, clicado){
-  if (verificaSeUmaDuplaJaFoiClicada(cartasClicadasPorRodada)){
-    verificaDupla(elementosClicados, clicado);
-    verificaVitoria(numeroDePares);
-  }
-}
-
-function invalidaCliques(){
-  telaNaoClicavel.classList.add("naoClicavel");
-}
-
-function seCartaEstaViradaParaBaixo(virado){
-  if (virado.indexOf('verso') !== -1){
-    return true;
-  }else{
-    return false;
-  }
-} 
-
-function tocarSomDeAcerto(){
-  var audioAcertou = new Audio();
-  audioAcertou.src = "../sons/success.wav";
-  audioAcertou.play();
-}
-
-function tocarSomDesvirando(){
-  var audio2 = new Audio();
-  audio2.src = "../sons/desviraCartaSom.wav";
-  audio2.play();
-}
-
-function tocarSomVirando(){
-  var audio1 = new Audio();
-  audio1.src = "../sons/viraCartaSom.wav";
-  audio1.play();
-}
-
-function tocarSomVitoria(){
-  var audioVitoria = new Audio();
-  audioVitoria.src = "../sons/yeah.wav";
-  audioVitoria.play();
-}
-
 function trocaClasseVerso(alvo){
   alvo.classList.toggle("verso");
 }
 
-function validaCliques(){
+function permiteCliques(){
   telaNaoClicavel.classList.remove("naoClicavel");
-}
-
-function verificaDupla(){
-  //verifica as classes (se for igual, a imagem também será)...
-  if(elementosClicados[0] === elementosClicados[1]){
-    setTimeout(() => {
-      tocarSomDeAcerto();
-    }, tempoParaVirarACarta * 3);
-    pontos ++;
-  }else{
-    invalidaCliques();
-    setTimeout(() => {
-      validaCliques();
-    }, tempoNaoClicavel);
-    desviraCarta();
-  }
-  elementosClicados = [];
-  cartasClicadasPorRodada -= 2;
-}
-
-function verificaSePodeMostrarCarta(virado, clicado){
-  if (seCartaEstaViradaParaBaixo(virado) && clicado.id){
-    viraCarta(clicado);
-    colocaNoVetorDeVerificacao(clicado);
-    fazValidacoes(cartasClicadasPorRodada, clicado);
-    cartasClicadasPorRodada ++;
-  }
-}
-
-function verificaSeUmaDuplaJaFoiClicada(cartasClicadasPorRodada){
-  if (cartasClicadasPorRodada > 0){
-    return true;
-  } else{
-    return false;
-  }
-}
-
-function verificaVitoria(numeroDePares){
-  if(pontos == numeroDePares){
-    setTimeout(() => {
-      tocarSomVitoria();
-      colocaModalVitoria(elemParaModal);
-    }, tempoParaAparecerMensagemVitoria);
-  }else{
-    console.log("Ainda não...")
-  } 
 }
 
 function viraCarta(clicado){
