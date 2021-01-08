@@ -2,6 +2,13 @@ const elemento = document.querySelector(".jogo");
 const elemParaModal = document.querySelector("#modal");
 const telaNaoClicavel = document.querySelector("#tela");
 
+const vetorDeSons = document.querySelectorAll(".audio");
+
+const somDeAcerto = vetorDeSons[0];        
+const somDeDesvirarACarta = vetorDeSons[1];
+const somDeVirarACarta = vetorDeSons[2];
+const somDeVitoria = vetorDeSons[3];
+
 let elementosClicados = [];
 let cartasClicadasPorRodada = 0;
 let primeiroId = 0;
@@ -76,7 +83,7 @@ function desviraCarta(){
   
   setTimeout(() => {
     animaACartaVirando(primeiro);
-    tocarSomDesvirando();
+    tocarSom(somDeDesvirarACarta);
     animaACartaVirando(segundo);
   }, tempoAntesDaCartaErradaVirarDeVolta);
 
@@ -92,5 +99,5 @@ function permiteCliques(){
 
 function viraCarta(clicado){
   animaACartaVirando(clicado);
-  tocarSomVirando();
+  tocarSom(somDeVirarACarta);
 }

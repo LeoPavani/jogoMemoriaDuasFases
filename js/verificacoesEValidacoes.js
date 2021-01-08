@@ -17,7 +17,7 @@ function verificaDupla(){
   //verifica as classes (se for igual, a imagem também será)...
   if(elementosClicados[0] === elementosClicados[1]){
     setTimeout(() => {
-      tocarSomDeAcerto();
+      tocarSom(somDeAcerto);
     }, tempoParaVirarACarta * 3);
     pontos ++;
   }else{
@@ -59,7 +59,7 @@ function verificaSeUmaDuplaJaFoiClicada(cartasClicadasPorRodada){
 function verificaVitoria(numeroDePares){
   if(pontos == numeroDePares){
     setTimeout(() => {
-      tocarSomVitoria();
+      tocarSom(somDeVitoria);
       colocaModalVitoria(elemParaModal);
     }, tempoParaAparecerMensagemVitoria);
   }else{
